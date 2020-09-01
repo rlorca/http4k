@@ -38,7 +38,7 @@ One of the most important things to us when we were developing was to create a l
 
 This post made us very (very) happy and all of our efforts feel completely worthwhile. 😊 We hope you all feel the same.
 
-As for community reach, we've been in touch with [http4k] user from all corners of the planet from all kinds of different projects and industries - from COVID tracking apps (relevant!) to Academic Publishers (that one was us 🙃) to Investment and Challenger Banks (also us), to No-code platforms. If Twitter is to be believed, the library seems pretty popular in Japan, but no-one on the core team speaks Japanese so we don't actually know why!
+As for community reach, we've been in touch with [http4k] user from all corners of the planet from all kinds of different projects and industries - from COVID tracking apps (relevant!) to Academic Publishers (that one was us) to Investment and Challenger Banks (also us), to No-code platforms. If Twitter is to be believed, the library seems pretty popular in Japan, but no-one on the core team speaks Japanese so we don't actually know why!
 
 #### Globe-trotting
 In 2018, we were lucky enough to be invited to [KotlinConf] in Amsterdam to talk about the development of [http4k], and this led to us presenting at a total of 10 international conferences, meetups and privately hosted company events spanning across 5 timezones to talk about the library and it's development story. As (apparent) ambassadors for how successful Kotlin can be in the serverside arena, so watch this space in the latter part of 2020 and beyond...
@@ -48,7 +48,7 @@ Another high point for us was having [http4k] featured in the [Thoughtworks Tech
 
 ##### **"Apart from its elegance and simplicity, we also like its emphasis on testability — given that the entities in the libraries are immutable and the routes in the app, as well as the app itself, are just functions, they're super easy to test." - TW TechRadar**
 
-As Kotlin cements its reputation as a solid choice for serverside (and eventually everywhere!) development, and continues to receive backing from successful projects across the proprietary and open source ecosystems, we hope to be able to do our bit to nudge it ever further upwards in
+As Kotlin cements its reputation as a solid choice for serverside (and eventually everywhere!) development, and continues to receive backing from successful projects across the proprietary and open source ecosystems, we hope to be able to do our bit to nudge it ever further upwards in the ["most loved language"] tables.
 
 #### Performing to a crowd
 One of the most frequent questions that we get asked about http4k is "how does it perform?". We attempted to answer that question by entering our baby into the TechEmpower benchmarks, which is a suite of tests which pits each library against the rest of the pack in a set of real-world-esque scenarios to see how it performs including JSON serialisation, database access and HTML templating generation.
@@ -69,11 +69,11 @@ dependencies {
 ```
 
 #### Cloudy-wowdy stuff
-Just as in every codebase there is a package called "utils", this also happens with libraries - useful code that doesn't quite fit anywhere else, yet you just always end up needing. For [http4k], these utils were about the ancillary stuff that goes around an application to make it support 12-factor ideals such as configuration and relative primitives. We didn't want to put this stuff into the [`http4k-core` module as we felt it wasn't absolutely necessary (and we wanted to continue to keep the binary size of the core module down). Thus, `http4k-cloudnative` was born! The major feature of this module is loading typesafe Environmental configuration of applications, using - what else...
+Just as in every codebase there is a package called "utils", this also happens with libraries - useful code that doesn't quite fit anywhere else, yet you just always end up needing. For [http4k], these utils were about the ancillary stuff that goes around an application to make it support 12-factor ideals such as configuration and relative primitives. We didn't want to put this stuff into the `http4k-core` module as we felt it wasn't absolutely necessary (and we wanted to continue to keep the binary size of the core module down). Thus, `http4k-cloudnative` was born! The major feature of this module is loading typesafe Environmental configuration of applications, using - what else...
 
 <img src="./lenses.png" alt="lenses"/>
 
-Yep - the reusing of the existing [http4k] lens system to cover config loading via nothing else other than a set of Kotlin extension functions was incredibly satisfying moment of realisation that we were onto a great idea! You can check out exactly how to use the feature [in the docs][cloudnative].
+Yep - the reusing of the existing [http4k] lens system to cover configuring your apps, meaning that it's now impossible to make easy mistakes such as setting a 10-second timeout as 10-milliseconds! You can check out exactly how to use the feature [in the docs][cloudnative].
 
 #### Testing modules
 
@@ -119,3 +119,4 @@ For production deployments, we continue to recommend the use of a tool such as P
 [v3]: https://github.com/http4k/http4k/tree/6639c964abf43c265591e3f70eb59467e60cd089
 [cloudnative]: https://http4k.org/guide/modules/cloud_native/
 [KotlinConf]: https://bit.ly/serverasafunction
+["most loved language"]: https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved
