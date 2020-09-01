@@ -98,19 +98,15 @@ One other piece of interesting research which came out and somewhat vindicated t
 
 For production deployments, we continue to recommend the use of a tool such as Proguard or R8 to massively reduce the size of packaged Serverless Function JAR file. The [http4k] serverless modules also ship with zero or minimal dependencies to avoid any transitive bloat that might occur.
 
-#### OAuth rollout
+#### Security
+Having rolled out [http4k] into various projects including a challenger bank, one concern that keeps coming up again ang again is Security. A lot of this work has been folded back into the `http4k-security-oauth` module, which now supports simple integration for OAuth and OpenIDConnect flows, as well as a very simple API to integrate apps with existing ID providers such as Auth0, Google, Facebook and GitHub.
 
-#### Future
+#### I've seen the future and it will be...
+So what's next? Well, we've got a load of good stuff coming up for post version 4 of [http4k], the rest of 2020 and beyond. As well as the website improvements, we've got a bunch of tools in the works to make the library more quick-start friendly, both from the command-line and from the browser. We're also looking at improvements in the versioning scheme to better communicate breaking changes, and rolling out modules to enable better Serverless platform support. 
 
-#### CLI
+Whatever happens though, the focus of [http4k] will always be on providing a best-in-class Developer and Testing experience. We'd love to hear how we're doing, so please drop into the comm channels to get in touch. Here's to the future. Stay safe out there and we'll see you in it.
 
-#### Toolbox
-
-#### versioning
-
-#### developer friendly focus
-
-
+### // the http4k team
 
 [github]: http://github.com/daviddenton
 [http4k]: https://http4k.org
