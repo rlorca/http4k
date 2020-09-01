@@ -76,12 +76,13 @@ Just as in every codebase there is a package called "utils", this also happens w
 Yep - the reusing of the existing [http4k] lens system to cover configuring your apps, meaning that it's now impossible to make easy mistakes such as setting a 10-second timeout as 10-milliseconds! You can check out exactly how to use the feature [in the docs][cloudnative].
 
 #### Testing modules
+It's no secret that the [http4k] team love testing - it's part of our core DNA and the simplicity of core design would be worthless unless we could test apps built with the library simply and effectively. To that end, some of the most exciting additions that we've added to the library have been in the arena of testing:
 
-
+* [Approval Testing] is a technique for simplifying complex assertions that might otherwise be more effectively checked by eye. `http4k-testing-approval` provides the primitives and tooling for supporting this style of testing,
+* [Chaos Testing] was made famous by Netflix for proving out how systems react when everything heads south. `http4k-testing-chaos` adds transparent, programmable failure-generation to any [httpt4k] app using only a simple `Filter`.
+* [Service Virtualization] enables API test contracts to be encoded and then shipped, simplifying the process of proving that apps retain compatibility, `http4k-testing-servirtium` provides the basis for recording and replaying contracts from disk or from other sources such as GitHub.
 
 #### OAuth rollout
-
-#### Versioning 
 
 #### OpenAPI FTW
 One of the most popular and standout [http4k] features is the support for the OpenApi specification. Originally supporting Swagger 2 spec via the `http4k-contract` module, we rewrote the implementation to add support for much more complete (and consistent!) version 3 of specification in May 2019. The module will now generate fully compliant OpenAPI3 documentation, including full JSON Schema breakdowns for class models and taking advantage of Kotlin class features such as enums and nullability. Powered by the [http4k] lens API, this runtime system allows developers to avoid concerning themselves with tediously documenting API models which can easily go stale.
@@ -120,3 +121,6 @@ For production deployments, we continue to recommend the use of a tool such as P
 [cloudnative]: https://http4k.org/guide/modules/cloud_native/
 [KotlinConf]: https://bit.ly/serverasafunction
 ["most loved language"]: https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-languages-loved
+[Approval Testing]: http://approvaltests.com
+[Chaos Testing]: http://principlesofchaos.org
+[Service Virtualization]: https://servirtium.dev
