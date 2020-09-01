@@ -36,7 +36,7 @@ One of the most important things to us when we were developing was to create a l
 
 ##### **"I find the entire http4k project quite exemplary in both function and style/form. At first glance (long time ago) my impression was that it must be deficient because the code-base was too small and the style - simple and elegant -- to the point I was skeptical it would actually work in 'the real world'. I have verified to my satisfaction that I was totally wrong. The apparent simplicity is actually elegance -- a direct representative of the overall design architecture. So thank you -- not just for a great library but also an inspiration and example of excellent engineering we could all strive to follow as a model of something done well." - David A. Lee**
 
-This post made us very (very) happy and all of our efforts feel completely worthwhile. 😊 We hope you all feel the same.
+This post made us very happy and all of our efforts feel completely worthwhile. We hope you all feel the same. 😊
 
 As for community reach, we've been in touch with [http4k] user from all corners of the planet from all kinds of different projects and industries - from COVID tracking apps (relevant!) to Academic Publishers (that one was us) to Investment and Challenger Banks (also us), to No-code platforms. If Twitter is to be believed, the library seems pretty popular in Japan, but no-one on the core team speaks Japanese so we don't actually know why!
 
@@ -82,15 +82,13 @@ It's no secret that the [http4k] team love testing - it's part of our core DNA a
 * [Chaos Testing] was made famous by Netflix for proving out how systems react when everything heads south. `http4k-testing-chaos` adds transparent, programmable failure-generation to any [httpt4k] app using only a simple `Filter`.
 * [Service Virtualization] enables API test contracts to be encoded and then shipped, simplifying the process of proving that apps retain compatibility, `http4k-testing-servirtium` provides the basis for recording and replaying contracts from disk or from other sources such as GitHub.
 
-#### OAuth rollout
-
 #### OpenAPI FTW
 One of the most popular and standout [http4k] features is the support for the OpenApi specification. Originally supporting Swagger 2 spec via the `http4k-contract` module, we rewrote the implementation to add support for much more complete (and consistent!) version 3 of specification in May 2019. The module will now generate fully compliant OpenAPI3 documentation, including full JSON Schema breakdowns for class models and taking advantage of Kotlin class features such as enums and nullability. Powered by the [http4k] lens API, this runtime system allows developers to avoid concerning themselves with tediously documenting API models which can easily go stale.
 
 #### Serverless turnabout
 The major [http4k] feature in version 3.0.0 was the addition of support for Serverless backends - namely the granddaddy of Serverless - AWS Lambda. And you know what they say about the first implementation of something? They say that it's probably wrong. Well, turns out they were right (again). When we got to introducing the second and third implementations of Serverless (Google Cloud Functions and OpenWhisk), we realised that the approach taken for AWS wasn't very dev friendly... it relied on reflection to solve the problem of loading the Lambda function class. This actually broke one of our own cardinal rules that we set for the [http4k] project: 
 
-*Absolutely no magic involved: No reflection. No annotations.*
+##### **"Absolutely no magic involved: No reflection. No annotations." - 5th Commandment of http4k**
  
 So - we did what any good dev team would do and replaced the magic function loading mechanism with a more developer friendly API working by class extension. Fear not readers - the guilty parties have been appropriately punished, and it (probably) won't happen again. 😉
 
@@ -99,6 +97,8 @@ One other piece of interesting research which came out and somewhat vindicated t
 ##### **"As expected, the dependencies slow the loading down. You should keep your Functions lean, otherwise, you will pay in seconds for every cold start." - Mikhail Shilkov**
 
 For production deployments, we continue to recommend the use of a tool such as Proguard or R8 to massively reduce the size of packaged Serverless Function JAR file. The [http4k] serverless modules also ship with zero or minimal dependencies to avoid any transitive bloat that might occur.
+
+#### OAuth rollout
 
 #### Future
 
