@@ -5,16 +5,16 @@ description: An overview of the Kotlin "Server as a Function" library, http4k
 
 ##### [@daviddenton][github]
 
-It's been quite a long time since we released version 3 of [http4k] all the way back in November 2017. Wow - that's over 1000 days in fact! Still, that doesn't mean that we've been sitting on our hands over in *http4k Towers* - far from it, we've been busier than ever making sure that we'll remember 2020 for more than just hibernating away in a bunker. In fact, the current interesting situation did give us an idea for a pretty original piece of swag... 
+It's been quite a long time since we released version 3 of [http4k] all the way back in November 2017. Wow - that's over 1000 days in fact! Still, that doesn't mean that we've been sitting on our hands over in **http4k Towers** - far from it, we've been busier than ever making sure that we'll remember 2020 for more than just hibernating away in a bunker. In fact, the current interesting situation did give us an idea for a pretty original piece of swag... 
 
 <img src="./mask_black.png" alt="mask"/>
 
-The eagle-eyed amongst you may have noticed that the project branding has undergone a bit of cosmetic surgery - we thought we'd treat ourselves to a professional job as opposed to the one I knocked up on the cheap way back at the start of the project. We're planning to do an entire refit of the content over the next few months, hopefully to make everything a little easier to find and to provide a few more pointers about where to start with the library.
+The eagle-eyed amongst you may have noticed that the project branding has undergone a bit of cosmetic surgery - we thought we'd treat ourselves to a professional job as opposed to the one we knocked up on the cheap way back at the start of the project. We're planning to do an entire refit of the content over the next few months, hopefully to make everything a little easier to find and to provide a few more pointers about where to start with the library. Stay tuned...
 
-Anyway, I digress. We thought that we'd do a bit of a retrospective on what has happened in that time. But first off, here are some numbers about what has gone on in those 1000 days in the [http4k] codebase:
+Anyway, I digress. We thought that we'd do a bit of a retrospective on our version 3 journey. But first off, here are some numbers about what has gone on in those 1000 days in the [http4k] codebase:
 
-```groovy
->2500 commits
+```bash
+over 2500 commits!
 268 releases
 257 PRs merged
 139 issues fixed
@@ -26,20 +26,29 @@ Anyway, I digress. We thought that we'd do a bit of a retrospective on what has 
 4 new testing integrations
 2 new serverless backends 
 2 new templating libraries supported
-0 new dependencies added to the core module ;)
+0 new dependencies added to the core module 😉
 ```
 
 If you'd like to check out the old version in the GitHub time machine, [here][v3] is how the code looked all that time ago.
 
-#### Where has it been used?
-Neo-bank
-Government
-Investment banks
+#### Community involvement
+One of the most important things to us when we were developing was to create a library that we loved using, and we're thrilled that our users are so positive about [http4k] as well. The community around the library is just the type that we envisaged - a friendly, helpful and collaborative space, and some of the very best code (be it new modules or and fixes) have come directly from there. Our favourite piece of feedback was this post to our Slack channel:
 
-#### Chitter chatter 
-In 2018, we were lucky enough to be invited to KotlinConf in Amsterdam to talk about the development of [http4k], and this led to us alone presenting at a total of 10 international conferences, meetups and privately hosted company events spanning across 5 timezones to talk about the library and it's development.
+##### **"I find the entire http4k project quite exemplary in both function and style/form. At first glance (long time ago) my impression was that it must be deficient because the code-base was too small and the style - simple and elegant -- to the point I was skeptical it would actually work in 'the real world'. I have verified to my satisfaction that I was totally wrong. The apparent simplicity is actually elegance -- a direct representative of the overall design architecture. So thank you -- not just for a great library but also an inspiration and example of excellent engineering we could all strive to follow as a model of something done well." - David A. Lee**
 
-, with more to come in the latter part of 2020 and beyond. 
+This post made us very (very) happy and all of our efforts feel completely worthwhile. 😊 We hope you all feel the same.
+
+As for community reach, we've been in touch with [http4k] user from all corners of the planet from all kinds of different projects and industries - from COVID tracking apps (relevant!) to Academic Publishers (that one was us 🙃) to Investment and Challenger Banks (also us), to No-code platforms. If Twitter is to be believed, the library seems pretty popular in Japan, but no-one on the core team speaks Japanese so we don't actually know why!
+
+#### Globe-trotting
+In 2018, we were lucky enough to be invited to [KotlinConf] in Amsterdam to talk about the development of [http4k], and this led to us presenting at a total of 10 international conferences, meetups and privately hosted company events spanning across 5 timezones to talk about the library and it's development story. As (apparent) ambassadors for how successful Kotlin can be in the serverside arena, so watch this space in the latter part of 2020 and beyond...
+
+#### On the radar
+Another high point for us was having [http4k] featured in the [Thoughtworks Technology Radar], which is a quarterly publication highlighting tools, techniques and languages that the well-known consultancy have been using to successfully deliver projects across the globe. ThoughtWorks called out the test-driven nature of [http4k], citing:
+
+##### **"Apart from its elegance and simplicity, we also like its emphasis on testability — given that the entities in the libraries are immutable and the routes in the app, as well as the app itself, are just functions, they're super easy to test." - TW TechRadar**
+
+As Kotlin cements its reputation as a solid choice for serverside (and eventually everywhere!) development, and continues to receive backing from successful projects across the proprietary and open source ecosystems, we hope to be able to do our bit to nudge it ever further upwards in
 
 #### Performing to a crowd
 One of the most frequent questions that we get asked about http4k is "how does it perform?". We attempted to answer that question by entering our baby into the TechEmpower benchmarks, which is a suite of tests which pits each library against the rest of the pack in a set of real-world-esque scenarios to see how it performs including JSON serialisation, database access and HTML templating generation.
@@ -48,24 +57,27 @@ Overall, we were thrilled (and continue to be) with the results of the benchmark
 
 In terms of the performance of the server backends, Apache HttpComponents (version 4) has been consistently the strongest performer in the previous benchmarks, although there have been performance improvements to the Netty backend implementations that we are hopeful in the upcoming round 20 might make it a real contender for the http4k 👑.
 
-#### On the radar
-Another high point for us was having [http4k] featured in the [Thoughtworks Technology Radar], which is a quarterly publication highlighting tools, techniques and languages that the well-known consultancy have been using to successfully deliver projects across the globe. ThoughtWorks called out the test-driven nature of [http4k], citing:
+#### Enter the platform!
+When we conceived [http4k], it was a simple 40 line shim over the top of another Java-based framework, bashed together on a HackDay. Never did we realise that a few years later it would be a very popular library with over 40 modules! For this reason (and to save on typing), we introduced the `http4k-bom` module, allowing users to use a single version of all [http4k] libraries and then just import the modules they need.
 
-##### **"Apart from its elegance and simplicity, we also like its emphasis on testability — given that the entities in the libraries are immutable and the routes in the app, as well as the app itself, are just functions, they're super easy to test." - TW TechRadar**
-
-#### The platform!
-BOM
+```groovy
+dependencies {
+    implementation platform("org.http4k:http4k-bom:3.259.0")
+    implementation "org.http4k:http4k-core"
+    implementation "org.http4k:http4k-server-undertow"
+}
+```
 
 #### Cloudy-wowdy stuff
 Just as in every codebase there is a package called "utils", this also happens with libraries - useful code that doesn't quite fit anywhere else, yet you just always end up needing. For [http4k], these utils were about the ancillary stuff that goes around an application to make it support 12-factor ideals such as configuration and relative primitives. We didn't want to put this stuff into the [`http4k-core` module as we felt it wasn't absolutely necessary (and we wanted to continue to keep the binary size of the core module down). Thus, `http4k-cloudnative` was born! The major feature of this module is loading typesafe Environmental configuration of applications, using - what else...
 
 <img src="./lenses.png" alt="lenses"/>
 
-Yep - the reuse of the existing [http4k] lens system to cover config loading via nothing else other than a set of Kotlin extension functions was incredibly satisfying moment of realisation that we were onto a great idea! You can check out exactly how to use the feature [in the docs][cloudnative] 
+Yep - the reusing of the existing [http4k] lens system to cover config loading via nothing else other than a set of Kotlin extension functions was incredibly satisfying moment of realisation that we were onto a great idea! You can check out exactly how to use the feature [in the docs][cloudnative].
 
 #### Testing modules
 
-#### Community involvement
+
 
 #### OAuth rollout
 
@@ -106,3 +118,4 @@ For production deployments, we continue to recommend the use of a tool such as P
 [Cold Start War]: https://mikhail.io/2018/08/serverless-cold-start-war/
 [v3]: https://github.com/http4k/http4k/tree/6639c964abf43c265591e3f70eb59467e60cd089
 [cloudnative]: https://http4k.org/guide/modules/cloud_native/
+[KotlinConf]: https://bit.ly/serverasafunction
